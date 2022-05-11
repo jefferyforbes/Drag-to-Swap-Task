@@ -31,6 +31,10 @@ class MainActivityCoordinator(
         viewModel.draggingIndex.value = null
     }
 
+    fun imageDragging(eventX: Int, eventY: Int) {
+        viewModel.events.value = Events.ImageDragging(eventX, eventY)
+    }
+
     fun imageDropped(eventX: Int, eventY: Int) {
         viewModel.events.value = Events.ImageDropped(eventX, eventY)
     }
@@ -38,5 +42,6 @@ class MainActivityCoordinator(
     sealed class Events {
         data class ImageDropped(val x: Int, val y: Int) : Events()
         object ImageSelected: Events()
+        data class ImageDragging(val x: Int, val y: Int) : Events()
     }
 }
