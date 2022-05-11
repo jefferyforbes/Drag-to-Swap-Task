@@ -1,4 +1,6 @@
-Using the Motion events I tried to use the MotionEvent.ACTION_MOVE as the scope to call a drag
-listener to show a shadow of the image being moved before the drop event.
+Using the Motion events I tried to use the MotionEvent.ACTION_MOVE as the scope to call a drag listener to 
+show a shadow of the image being moved before the drop event. However, this did not work at all as intended. 
 
-The problem is this does not create the shadow and breaks the swap functionality
+This actually led to inconsistency of which image could be moved. The alternative approach that I tried was simply
+to update the image location within the ACTION_MOVE scope but this also led to chopping animation while dragging the 
+image and would move outside the screen view.
